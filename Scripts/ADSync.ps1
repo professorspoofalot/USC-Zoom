@@ -7,14 +7,6 @@ Import-Module ActiveDirectory
 $Global:ZoomApiKey    = 'API_Key_Goes_Here'
 $Global:ZoomApiSecret = 'API_Secret_Goes_Here'
 
- # Get all Active Directory users
- Write-Progress -Activity "Gathering users from AD"
- $ADUsers = Get-ADUser -Filter * -Properties mail -ResultSetSize $null | Sort-Object mail
- 
- # Get all Zoom users
- Write-Progress -Activity "Gathering users from Zoom"
- $ZoomUsers = (Get-ZoomUsers -Status active -AllPages) + (Get-ZoomUsers -Status inactive -AllPages)
- 
 # Deactivate Zoom users who are disabled in Active Directory
 $ActiveZoomUsers = (Get-ZoomUsers -Status active -AllPages)
 $ActiveZoomUsers.email | ForEach-Object {
