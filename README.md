@@ -5,15 +5,15 @@ Tools used by USC to interface with the Zoom API
 These tools will require an API key and API secret. You can generate the JWT key/secret from https://marketplace.zoom.us/develop/create, then click on 'Create' under JWT.
 
 ### Prerequisites
-####PowerShell
+#### PowerShell
 
-####Active Directory
+#### Active Directory
 ```
 Get-WindowsCapability -Name RSAT.ActiveDirectory* -Online | Add-WindowsCapability -Online
 Import-Module ActiveDirectory
 ```
 
-####PSZoom
+#### PSZoom
 ```
 Install-Module PSZoom
 Import-Module PSZoom
