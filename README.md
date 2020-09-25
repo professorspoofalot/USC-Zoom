@@ -8,6 +8,11 @@ PowerShell tools used by USC to interface with the Zoom API
 Get-WindowsCapability -Name RSAT.ActiveDirectory* -Online | Add-WindowsCapability -Online
 Import-Module ActiveDirectory
 ```
+### [PSZoom](https://github.com/JosephMcEvoy/PSZoom)
+```
+Install-Module PSZoom
+Import-Module PSZoom
+```
 ### [Zoom Marketplace JWT App](https://marketplace.zoom.us/docs/guides/build/jwt-app)
 You will need to create your own [JWT app](https://marketplace.zoom.us/docs/guides/build/jwt-app) in the Zoom Marketplace. Generate the JWT key/secret and copy it into these scripts.
 ```
@@ -15,12 +20,6 @@ You will need to create your own [JWT app](https://marketplace.zoom.us/docs/guid
 $Global:ZoomApiKey    = 'API_Key_Goes_Here'
 $Global:ZoomApiSecret = 'API_Secret_Goes_Here'
 ```
-### [PSZoom](https://github.com/JosephMcEvoy/PSZoom)
-```
-Install-Module PSZoom
-Import-Module PSZoom
-```
-
 ## Scripts
 
 ### ADSync.ps1
