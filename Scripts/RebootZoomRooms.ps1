@@ -3,7 +3,8 @@ Get-WindowsCapability -Name RSAT.ActiveDirectory* -Online | Add-WindowsCapabilit
 Import-Module ActiveDirectory
 
 # Get all Zoom Room computers
-$ZoomRoomComputers = Get-ADComputer -SearchBase "OU=Zoom Rooms,OU=Shared,OU=Workstations,DC=usc,DC=internal" -Filter *
+$ZoomRoomsOU = "OU=Zoom Rooms,OU=Shared,OU=Workstations,DC=usc,DC=internal"
+$ZoomRoomComputers = Get-ADComputer -SearchBase $ZoomRoomsOU -Filter *
 
 # Loop through each computer, test connection and reboot
 ForEach ($ComputerName in $ZoomRoomComputers.Name) {
