@@ -9,6 +9,6 @@ $ZoomRoomComputers = Get-ADComputer -SearchBase $ZoomRoomsOU -Filter *
 # Loop through each computer, test connection and reboot
 ForEach ($ComputerName in $ZoomRoomComputers.Name) {
     If (Test-Connection -ComputerName $ComputerName -Count 1 -Quiet) {
-        Restart-Computer -ComputerName $ComputerName -Force -Verbose -WhatIf
+        Restart-Computer -ComputerName $ComputerName -Force -Verbose
     }
 }
